@@ -5,11 +5,11 @@ logout
 os models
 login
 reserva do recurso
+configurar para aparecer as mensagens
 
 fazendo:
 estilização
+remover e editar agendamento
 
 a fazer:
-configurar para aparecer as mensagens
-remover e editar agendamento
 deploy

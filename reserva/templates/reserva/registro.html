@@ -1,21 +1,29 @@
 {% extends 'reserva/base.html' %}
 
 {% block content %}
-<h1>Registro</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    <div>
-        <label for="id_username">Usuário</label>
-        <input type="text" name="username" id="id_username" required>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 m-auto">
+            <h1>Registro</h1>
+            <form class="form" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="form-label" for="id_username">Usuário</label>
+                    <input class="form-control" type="text" name="username" id="id_username" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="id_password1">Senha</label>
+                    <input class="form-control" type="password" name="password1" id="id_password1" required>
+                </div class="form-group">
+                <div>
+                    <label class="form-label" for="id_password2">Repita a senha</label>
+                    <input class="form-control" type="password" name="password2" id="id_password2" required>
+                </div>
+                <button class="btn btn-primary my-3" type="submit">Registrar</button>
+            </form>
+            <p>Já tem conta? <a href="{% url 'login' %}">Faça login.</a></p>
+        </div>
     </div>
-    <div>
-        <label for="id_password1">Senha</label>
-        <input type="password" name="password1" id="id_password1" required>
-    </div>
-    <div>
-        <label for="id_password2">Repita a senha</label>
-        <input type="password" name="password2" id="id_password2" required>
-    </div>
-    <button type="submit">Registrar</button>
-</form>
+</div>
+
 {% endblock content %}

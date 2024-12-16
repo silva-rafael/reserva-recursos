@@ -5,8 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.models import Permission
 from .forms import ReservaForm
 from .models import Reserva
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def home_view(request):
     user=request.user
     reservas = Reserva.objects.filter(usuario=user)
@@ -26,20 +27,6 @@ def home_view(request):
     })
 
 
-
-#------------------------------------------------------------------------
-
-
-# def reserva_view(request):
-#     if request.method == 'POST':
-#         form = ReservaForm(request.POST)
-#         if form.is_valid():
-#             form.save()  # Salva os dados diretamente no banco
-#             return redirect('success')
-#     else:
-#         form = ReservaForm()
-
-#     return render(request, 'create_book.html', {'form': form})
 
 #------------------------------------------------------------------------
 
