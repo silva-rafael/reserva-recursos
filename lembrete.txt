@@ -1,0 +1,5 @@
+coisas que ja fiz:
+o registro
+foi setado as permissões para os novos usuários na hora do registro
+logout
+os models

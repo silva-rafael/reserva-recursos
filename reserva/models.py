@@ -17,5 +17,13 @@ class Reserva(models.Model):
     data = models.DateField()
     hora = models.TimeField()
 
+    class Meta:
+        permissions = [
+            ("can_add_reserva", "Can add reserva"),
+            ("can_delete_reserva", "Can delete reserva"),
+            ("can_change_reserva", "Can change reserva"),
+            ("can_view_reserva", "Can view reserva"),
+        ]
+
     def __str__(self):
          return f"{self.recurso.nome} - {self.usuario.username}"

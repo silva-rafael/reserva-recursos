@@ -1,0 +1,21 @@
+{% extends 'reserva/base.html' %}
+
+{% block content %}
+<h1>Registro</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="id_username">Usuário</label>
+        <input type="text" name="username" id="id_username" required>
+    </div>
+    <div>
+        <label for="id_password1">Senha</label>
+        <input type="password" name="password1" id="id_password1" required>
+    </div>
+    <div>
+        <label for="id_password2">Repita a senha</label>
+        <input type="password" name="password2" id="id_password2" required>
+    </div>
+    <button type="submit">Registrar</button>
+</form>
+{% endblock content %}
