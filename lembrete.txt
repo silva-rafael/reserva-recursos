@@ -3,3 +3,12 @@ o registro
 foi setado as permissões para os novos usuários na hora do registro
 logout
 os models
+login
+reserva do recurso
+
+fazendo:
+estilização
+
+a fazer:
+configurar para aparecer as mensagens
+deploy

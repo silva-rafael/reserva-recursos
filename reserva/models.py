@@ -13,7 +13,7 @@ class Recurso(models.Model):
         
 class Reserva(models.Model):
     recurso = models.ForeignKey(Recurso, on_delete=models.CASCADE)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.CharField(max_length=100)
     data = models.DateField()
     hora = models.TimeField()
 
@@ -26,4 +26,4 @@ class Reserva(models.Model):
         ]
 
     def __str__(self):
-         return f"{self.recurso.nome} - {self.usuario.username}"
+         return f"{self.recurso.nome} - {self.usuario}"

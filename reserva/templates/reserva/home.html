@@ -1,5 +1,45 @@
 {% extends "reserva/base.html" %}
 
 {% block content %}
-  <h1>home</h1>
+<h1>Reservar</h1>
+<a href="{% url 'logout' %}">Sair</a>
+
+<form action="{% url 'home' %}" method="post">
+  {% csrf_token %}
+  <div>
+    <label for="">Recurso</label><br>
+    {{form.recurso}}
+  </div>
+  <input type="hidden" name="usuario" id="id_usuario" value="{{user.username}}">
+  <div>
+    <label for="">Escolha uma data</label><br>
+    <input type="date" name="data" id="id_data">
+  </div>
+  <div>
+    <label for="">Escolha um horário</label><br>
+    <input type="time" name="hora" id="id_hora">
+  </div>
+  <button type="submit">Reservar</button>
+</form>
+
+<h3>Minhas Reservas</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Recurso</th>
+      <th>Data</th>
+      <th>Horário</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for reserva in reservas %}
+    <tr>
+      <td>{{reserva.recurso.nome}}</td>
+      <td>{{reserva.data}}</td>
+      <td>{{reserva.hora}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
 {% endblock content %}
